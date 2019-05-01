@@ -2,7 +2,9 @@
 #include <iostream>
 #include<memory>
 #include "Singleton.h"
-
+/*
+スマートポインタ shared_ptrヘルパークラス
+*/
 template<typename T>
 class shared_helper {
 	private:
@@ -21,7 +23,9 @@ class shared_helper {
 		}
 };
 
-
+/*
+インスタンス取得
+*/
 std::weak_ptr<Singleton> Singleton::getInstance()
 {
 	if (!instance) {
@@ -37,6 +41,7 @@ Singleton::Singleton()
 }
 Singleton::~Singleton()
 {
+	// 解放時に自身のアドレスを出力する
 	std::cout << "~Singleton" << this << std::endl;
 }
 
