@@ -151,6 +151,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ExternalInterface.h" />
+    <ClInclude Include="IExternalInterface.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Singleton.h" />
   </ItemGroup>
