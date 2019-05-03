@@ -2,6 +2,7 @@
 #include <iostream>
 #include<memory>
 #include "Singleton.h"
+#include"ExternalInterface.h"
 /*
 スマートポインタ shared_ptrヘルパークラス
 */
@@ -28,22 +29,37 @@ class shared_helper {
 */
 std::weak_ptr<Singleton> Singleton::getInstance()
 {
+	// インスタンス確認・作成
 	if (!instance) {
 		instance = shared_helper<Singleton>::make_shared();
 	}
-	std::cout << "getInstance " << instance << std::endl;
+
+	// 外部インターフェース確認・作成
+	if (!externalInterface) {
+		bindExternalInterface<ExternalInterface>();
+	}
+
+	std::cout << "getInstance " << instance << " " << Singleton::externalInterface << std::endl;
 	return instance;
+}
+
+bool Singleton::check(std::string id) {
+	return Singleton::externalInterface->check(id);
 }
 
 Singleton::Singleton()
 {
 	std::cout << "Singleton" << std::endl;
+
+	Singleton::externalInterface = nullptr;
 }
 Singleton::~Singleton()
 {
 	// 解放時に自身のアドレスを出力する
-	std::cout << "~Singleton" << this << std::endl;
+	std::cout << "~Singleton" << this << " " << Singleton::externalInterface << std::endl;
 }
 
 std::shared_ptr<Singleton> Singleton::instance = 0;
+std::shared_ptr<IExternalInterface> Singleton::externalInterface = 0;
+
 

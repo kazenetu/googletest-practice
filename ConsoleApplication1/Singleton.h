@@ -4,6 +4,8 @@
 #define Singleton_h
 
 #include<memory>
+#include"IExternalInterface.h"
+#include"ExternalInterface.h"
 
 /*
 シングルトンクラス
@@ -16,6 +18,13 @@ public:
 	*/
 	static std::weak_ptr<Singleton> getInstance();
 
+	template<typename T>
+	static void bindExternalInterface()
+	{
+		externalInterface = std::make_shared<T>();
+	}
+
+	bool check(std::string id);
 protected:
 	/*
 	インスタンス
@@ -27,6 +36,11 @@ protected:
 	*/
 	template<typename T>
 	friend class shared_helper;
+
+	/*
+	外部インターフェース
+	*/
+	static std::shared_ptr<IExternalInterface> externalInterface;
 
 	Singleton();
 	~Singleton();
