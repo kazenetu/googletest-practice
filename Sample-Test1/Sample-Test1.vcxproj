@@ -40,6 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ClInclude Include="..\ConsoleApplication1\Singleton.h" />
+    <ClInclude Include="ExternalInterfaceStub.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>

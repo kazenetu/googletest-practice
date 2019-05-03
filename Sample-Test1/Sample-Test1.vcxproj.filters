@@ -12,6 +12,7 @@
     <ClInclude Include="..\ConsoleApplication1\Singleton.h">
       <Filter>target</Filter>
     </ClInclude>
+    <ClInclude Include="ExternalInterfaceStub.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="target">
