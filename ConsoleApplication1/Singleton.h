@@ -18,14 +18,21 @@ public:
 	*/
 	static std::weak_ptr<Singleton> getInstance();
 
+	/*
+	外部インターフェース設定
+	*/
 	template<typename T>
 	static void bindExternalInterface()
 	{
 		externalInterface = std::make_shared<T>();
 	}
 
+	/*
+	外部インターフェースの確認処理
+	*/
 	bool check(std::string id);
 protected:
+
 	/*
 	インスタンス
 	*/
@@ -38,7 +45,7 @@ protected:
 	friend class shared_helper;
 
 	/*
-	外部インターフェース
+	外部インターフェースインスタンス
 	*/
 	static std::shared_ptr<IExternalInterface> externalInterface;
 

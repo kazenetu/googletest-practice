@@ -43,6 +43,9 @@ std::weak_ptr<Singleton> Singleton::getInstance()
 	return instance;
 }
 
+/*
+外部インターフェースの確認処理
+*/
 bool Singleton::check(std::string id) {
 	return Singleton::externalInterface->check(id);
 }
@@ -59,6 +62,7 @@ Singleton::~Singleton()
 	std::cout << "~Singleton" << this << " " << Singleton::externalInterface << std::endl;
 }
 
+// 初期化
 std::shared_ptr<Singleton> Singleton::instance = 0;
 std::shared_ptr<IExternalInterface> Singleton::externalInterface = 0;
 
