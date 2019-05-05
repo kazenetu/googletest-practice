@@ -11,7 +11,7 @@
 class IExternalInterface
 {
 public:
-	virtual bool check(std::string id) = 0;
+    virtual bool check(std::string id) = 0;
 };
 
 #endif

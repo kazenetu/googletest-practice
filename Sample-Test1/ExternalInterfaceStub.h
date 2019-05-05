@@ -11,9 +11,9 @@
 class ExternalInterfaceStub :public IExternalInterface
 {
 public:
-	bool check(std::string id);
+    bool check(std::string id);
 
-	static bool returnValue;
+    static bool returnValue;
 };
 
 /*
@@ -21,9 +21,9 @@ public:
 */
 inline bool ExternalInterfaceStub::check(std::string id)
 {
-	// TODO ˆ—À‘•
+    // TODO ˆ—À‘•
 
-	return returnValue;
+    return returnValue;
 }
 
 // ‰Šú‰»

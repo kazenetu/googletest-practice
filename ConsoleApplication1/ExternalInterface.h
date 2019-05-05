@@ -11,7 +11,7 @@
 class ExternalInterface :public IExternalInterface
 {
 public:
-	bool check(std::string id);
+    bool check(std::string id);
 };
 
 /*
@@ -19,8 +19,8 @@ public:
 */
 inline bool ExternalInterface::check(std::string id)
 {
-	// TODO ˆ—À‘•
+    // TODO ˆ—À‘•
 
-	return false;
+    return false;
 }
 #endif

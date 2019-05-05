@@ -7,8 +7,8 @@
 
 int main()
 {
-	auto instanceA = Singleton::getInstance();
-	auto instanceB = Singleton::getInstance();
+    auto instanceA = Singleton::getInstance();
+    auto instanceB = Singleton::getInstance();
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
