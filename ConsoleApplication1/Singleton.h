@@ -8,18 +8,18 @@
 #include"ExternalInterface.h"
 
 /*
-ƒVƒ“ƒOƒ‹ƒgƒ“ƒNƒ‰ƒX
+ã‚·ãƒ³ã‚°ãƒ«ãƒˆãƒ³ã‚¯ãƒ©ã‚¹
 */
 class Singleton
 {
 public:
     /*
-    ƒCƒ“ƒXƒ^ƒ“ƒXæ“¾
+    ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹å–å¾—
     */
     static std::weak_ptr<Singleton> getInstance();
 
     /*
-    ŠO•”ƒCƒ“ƒ^[ƒtƒF[ƒXİ’è
+    å¤–éƒ¨ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹è¨­å®š
     */
     template<typename T>
     static void bindExternalInterface()
@@ -28,24 +28,24 @@ public:
     }
 
     /*
-    ŠO•”ƒCƒ“ƒ^[ƒtƒF[ƒX‚ÌŠm”Fˆ—
+    å¤–éƒ¨ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã®ç¢ºèªå‡¦ç†
     */
     bool check(std::string id);
 protected:
 
     /*
-    ƒCƒ“ƒXƒ^ƒ“ƒX
+    ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
     */
     static std::shared_ptr<Singleton> instance;
 
     /*
-    ƒXƒ}[ƒgƒ|ƒCƒ“ƒ^ shared_ptrƒwƒ‹ƒp[ƒNƒ‰ƒX
+    ã‚¹ãƒãƒ¼ãƒˆãƒã‚¤ãƒ³ã‚¿ shared_ptrãƒ˜ãƒ«ãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹
     */
     template<typename T>
     friend class shared_helper;
 
     /*
-    ŠO•”ƒCƒ“ƒ^[ƒtƒF[ƒXƒCƒ“ƒXƒ^ƒ“ƒX
+    å¤–éƒ¨ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
     */
     static std::shared_ptr<IExternalInterface> externalInterface;
 

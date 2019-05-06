@@ -4,7 +4,7 @@
 #include "Singleton.h"
 #include"ExternalInterface.h"
 /*
-ƒXƒ}[ƒgƒ|ƒCƒ“ƒ^ shared_ptrƒwƒ‹ƒp[ƒNƒ‰ƒX
+ã‚¹ãƒãƒ¼ãƒˆãƒã‚¤ãƒ³ã‚¿ shared_ptrãƒ˜ãƒ«ãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹
 */
 template<typename T>
 class shared_helper {
@@ -25,16 +25,16 @@ private:
 };
 
 /*
-ƒCƒ“ƒXƒ^ƒ“ƒXæ“¾
+ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹å–å¾—
 */
 std::weak_ptr<Singleton> Singleton::getInstance()
 {
-    // ƒCƒ“ƒXƒ^ƒ“ƒXŠm”FEì¬
+    // ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ç¢ºèªãƒ»ä½œæˆ
     if (!instance) {
         instance = shared_helper<Singleton>::make_shared();
     }
 
-    // ŠO•”ƒCƒ“ƒ^[ƒtƒF[ƒXŠm”FEì¬
+    // å¤–éƒ¨ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ç¢ºèªãƒ»ä½œæˆ
     if (!externalInterface) {
         bindExternalInterface<ExternalInterface>();
     }
@@ -44,7 +44,7 @@ std::weak_ptr<Singleton> Singleton::getInstance()
 }
 
 /*
-ŠO•”ƒCƒ“ƒ^[ƒtƒF[ƒX‚ÌŠm”Fˆ—
+å¤–éƒ¨ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã®ç¢ºèªå‡¦ç†
 */
 bool Singleton::check(std::string id) {
     return Singleton::externalInterface->check(id);
@@ -58,11 +58,11 @@ Singleton::Singleton()
 }
 Singleton::~Singleton()
 {
-    // ‰ğ•ú‚É©g‚ÌƒAƒhƒŒƒX‚ğo—Í‚·‚é
+    // è§£æ”¾æ™‚ã«è‡ªèº«ã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’å‡ºåŠ›ã™ã‚‹
     std::cout << "~Singleton" << this << " " << Singleton::externalInterface << std::endl;
 }
 
-// ‰Šú‰»
+// åˆæœŸåŒ–
 std::shared_ptr<Singleton> Singleton::instance = 0;
 std::shared_ptr<IExternalInterface> Singleton::externalInterface = 0;
 

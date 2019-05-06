@@ -6,7 +6,7 @@
 #include "../ConsoleApplication1/IExternalInterface.h"
 
 /*
-ŠO•”ƒCƒ“ƒ^[ƒtƒF[ƒX—pƒTƒuƒNƒ‰ƒX
+å¤–éƒ¨ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ç”¨ã‚µãƒ–ã‚¯ãƒ©ã‚¹
 */
 class ExternalInterfaceStub :public IExternalInterface
 {
@@ -17,16 +17,16 @@ public:
 };
 
 /*
-ƒ`ƒFƒbƒNˆ—
+ãƒã‚§ãƒƒã‚¯å‡¦ç†
 */
 inline bool ExternalInterfaceStub::check(std::string id)
 {
-    // TODO ˆ—À‘•
+    // TODO å‡¦ç†å®Ÿè£…
 
     return returnValue;
 }
 
-// ‰Šú‰»
+// åˆæœŸåŒ–
 bool ExternalInterfaceStub::returnValue = false;
 
 #endif

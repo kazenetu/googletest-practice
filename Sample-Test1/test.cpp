@@ -5,27 +5,27 @@
 #include "ExternalInterfaceStub.h"
 
 /*
-ƒCƒ“ƒXƒ^ƒ“ƒXæ“¾ƒƒ\ƒbƒh‚ª“¯‚¶ƒAƒhƒŒƒX‚ğ•Ô‚·‚©Šm”F
+ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹å–å¾—ãƒ¡ã‚½ãƒƒãƒ‰ãŒåŒã˜ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’è¿”ã™ã‹ç¢ºèª
 */
 TEST(TestCaseName, TestName) {
     auto ins1 = Singleton::getInstance().lock();
     auto ins2 = Singleton::getInstance().lock();
 
-    // “¯ˆêƒAƒhƒŒƒX‚©H
+    // åŒä¸€ã‚¢ãƒ‰ãƒ¬ã‚¹ã‹ï¼Ÿ
     EXPECT_EQ(ins1, ins2);
 }
 
 /*
-ŠO•”ƒCƒ“ƒ^[ƒtƒF[ƒX‚Ì’l‚ª³‚µ‚¢‚©Šm”F
+å¤–éƒ¨ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã®å€¤ãŒæ­£ã—ã„ã‹ç¢ºèª
 */
 TEST(TestCaseName, ExternalInterfaceTest) {
 
     auto ins1 = Singleton::getInstance().lock();
 
-    // ŠO•”ƒCƒ“ƒ^[ƒtƒF[ƒXİ’è
+    // å¤–éƒ¨ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹è¨­å®š
     Singleton::bindExternalInterface<ExternalInterfaceStub>();
     ExternalInterfaceStub::returnValue = true;
 
-    // ŠO•”ƒCƒ“ƒ^[ƒtƒF[ƒX‚ÌŒ‹‰Ê‚ğŠm”F
+    // å¤–éƒ¨ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã®çµæœã‚’ç¢ºèª
     EXPECT_EQ(false, ins1->check("123"));
 }

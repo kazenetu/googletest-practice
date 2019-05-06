@@ -6,7 +6,7 @@
 #include "IExternalInterface.h"
 
 /*
-ŠO•”ƒCƒ“ƒ^[ƒtƒF[ƒX—pƒTƒuƒNƒ‰ƒX
+å¤–éƒ¨ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ç”¨ã‚µãƒ–ã‚¯ãƒ©ã‚¹
 */
 class ExternalInterface :public IExternalInterface
 {
@@ -15,11 +15,11 @@ public:
 };
 
 /*
-ƒ`ƒFƒbƒNˆ—
+ãƒã‚§ãƒƒã‚¯å‡¦ç†
 */
 inline bool ExternalInterface::check(std::string id)
 {
-    // TODO ˆ—ŽÀ‘•
+    // TODO å‡¦ç†å®Ÿè£…
 
     return false;
 }

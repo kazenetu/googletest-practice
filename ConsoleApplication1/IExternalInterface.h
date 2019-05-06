@@ -6,7 +6,7 @@
 #include <iostream>
 
 /*
-外部インターフェース用スーパークラス
+螟夜Κ繧､繝ｳ繧ｿ繝ｼ繝輔ぉ繝ｼ繧ｹ逕ｨ繧ｹ繝ｼ繝代�ｼ繧ｯ繝ｩ繧ｹ
 */
 class IExternalInterface
 {
