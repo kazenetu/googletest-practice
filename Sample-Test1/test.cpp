@@ -27,5 +27,5 @@ TEST(TestCaseName, ExternalInterfaceTest) {
     ExternalInterfaceStub::returnValue = true;
 
     // 外部インターフェースの結果を確認
-    EXPECT_EQ(false, ins1->check("123"));
+    EXPECT_EQ(true, ins1->check("123"));
 }
