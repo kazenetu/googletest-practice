@@ -4,11 +4,36 @@
 #include "pch.h"
 #include "Singleton.h"
 
+#include <vector>
+#include <thread>
 
 int main()
 {
-    auto instanceA = Singleton::getInstance();
-    auto instanceB = Singleton::getInstance();
+    // 4スレッドで並行に、
+    // singletonのstatic変数へとアクセスする
+    std::vector<std::thread> threads;
+    for (int i = 0; i < 4; ++i) {
+        std::thread t([] {
+            std::cout << "---start----" << std::endl;
+
+            auto i = Singleton::getInstance().lock();
+            auto result = i->check("1234");
+
+            if (result) {
+                std::cout << "OK" << std::endl;
+            }
+            else {
+                std::cout << "NG" << std::endl;
+            }
+
+            std::cout << "---end----" << std::endl;
+        });
+        threads.push_back(std::move(t));
+    }
+
+    for (std::thread& t : threads) {
+        t.join();
+    }
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
