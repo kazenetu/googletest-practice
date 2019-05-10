@@ -1,8 +1,9 @@
 #include "pch.h"
 #include <iostream>
-#include<memory>
+#include <memory>
+#include <mutex>
 #include "Singleton.h"
-#include"ExternalInterface.h"
+#include "ExternalInterface.h"
 /*
 スマートポインタ shared_ptrヘルパークラス
 */
@@ -29,6 +30,10 @@ private:
 */
 std::weak_ptr<Singleton> Singleton::getInstance()
 {
+    // 排他制御を実施
+    static std::recursive_mutex mutex_;
+    std::unique_lock<std::recursive_mutex> lock(mutex_);
+
     // インスタンス確認・作成
     if (!instance) {
         instance = shared_helper<Singleton>::make_shared();
